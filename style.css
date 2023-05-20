@@ -611,6 +611,7 @@ main{
 
 #toTopButton:hover {
   background-color: #555;
+  transition: background-color .3s
 }
 
 
