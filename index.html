@@ -174,19 +174,21 @@
         <div class="row" id="contactRow">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12494.88755708163!2d27.21769!3d38.470981450000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b97d1fa79aeb85%3A0xa921686c67f3b44e!2zQm9ybm92YSwgS8SxesSxbGF5LCAzNTAzMCBCb3Jub3ZhL8Swem1pcg!5e0!3m2!1str!2str!4v1680018983933!5m2!1str!2str"
            width="700"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <form action="index.php" method="post">
+            
+           
+           <form onsubmit="sendEmail(); reset(); return false;">
                 <h4>Get in Touch</h4>
                 <div class="inputBox">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Name Surname" name="isim" required />
+                    <input type="text" placeholder="Name Surname" id="name" required />
                 </div>
                 <div class="inputBox">
                     <i class="fa-solid fa-phone"></i>
-                    <input type="text" placeholder="Phone" name="telefon"  required />
+                    <input type="text" placeholder="Phone" id="phone"  required />
                 </div>
                 <div class="inputBox">
                     <i class="fas fa-envelope"></i>
-                    <input type="mail" placeholder="Mail"  name="mail" required />
+                    <input type="mail" placeholder="Mail"   id="email" required />
                 </div>
                 <div>
                   <input type="submit" value="SEND" class="btn">
@@ -208,10 +210,29 @@
     <!--Content End-->
 
     <!-- JavaScript Sources -->
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/aa5f332820.js" crossorigin=" anonymous"></script>
+
+    <script>
+      function sendEmail(){
+            Email.send({
+            SecureToken: "b428ec09-5c96-42b3-818d-04f5dc6e1d26",
+            To : 'emir.canakci@outlook.com',
+            From : document.getElementById("email").value,
+            Subject : "New Contact Form Enquiry",
+            Body : "Name: " + document.getElementById("name").value 
+                    + "<br> Email: "  + document.getElementById("email").value
+                    + "<br> Phone: "  + document.getElementById("phone").value
+
+
+        }).then(
+          message => alert(message)
+        );
+      }
+    </script>
+
 
     <script>
       if ( window.history.replaceState ) 
@@ -221,6 +242,3 @@
   </script>
   </body>
 </html>
-
-
-
