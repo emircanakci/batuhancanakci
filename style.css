@@ -551,6 +551,34 @@ main{
 }
 
 
+textarea{
+  height: 100%;
+  width: 100%;
+  padding: 1.7rem;
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: none;
+  background: none;
+  resize: none;
+}
+
+textarea::placeholder {
+  padding-top: 25px;
+}
+
+textarea::-webkit-scrollbar{
+  width: 0.6rem;
+
+}
+
+textarea::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb{
+  background-color: var(--borderBGColor);
+}
+
 .contact .row form .btn{
   color: var(--themeColor);
   background-color: #fff;
@@ -612,6 +640,5 @@ main{
 #toTopButton:hover {
   background-color: #555;
 }
-
 
 
