@@ -187,12 +187,12 @@
                     <input type="text" placeholder="Phone" id="phone"  required />
                 </div>
                 <div class="inputBox">
-                    <i class="fas fa-envelope"></i>
+                  <i class="fa-solid fa-envelope"></i>
                     <input type="mail" placeholder="Mail"   id="email" required />
                 </div>
                 <div class="inputBox">
-                  <i class="fas fa-envelope"></i>
-                  <input type="text" placeholder="Your message"   id="message" required />
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <textarea id="message" placeholder="Your Message" rows="4"></textarea>
               </div>
                 <div>
                   <input type="submit" value="SEND" class="btn">
@@ -234,7 +234,7 @@
 
 
         }).then(
-          message => alert("Message sent successfuly :" + message)
+          message => alert("Message sent successfuly : " + message)
         );
       }
     </script>
