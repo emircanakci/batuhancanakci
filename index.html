@@ -190,6 +190,10 @@
                     <i class="fas fa-envelope"></i>
                     <input type="mail" placeholder="Mail"   id="email" required />
                 </div>
+                <div class="inputBox">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" placeholder="Your message"   id="message" required />
+              </div>
                 <div>
                   <input type="submit" value="SEND" class="btn">
                 </div>
@@ -221,14 +225,16 @@
             SecureToken: "b428ec09-5c96-42b3-818d-04f5dc6e1d26",
             To : 'emir.canakci@outlook.com',
             From : document.getElementById("email").value,
-            Subject : "New Contact Form Enquiry",
+            Subject : "Batuhan.com'dan yeni bir mesaj !",
             Body : "Name: " + document.getElementById("name").value 
                     + "<br> Email: "  + document.getElementById("email").value
                     + "<br> Phone: "  + document.getElementById("phone").value
+                    + "<br> Message: "  + document.getElementById("message").value
+
 
 
         }).then(
-          message => alert(message)
+          message => alert("Message sent successfuly :" + message)
         );
       }
     </script>
